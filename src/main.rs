@@ -181,6 +181,7 @@ async fn join_federation_inner(
   invite_code: String,
   client_name: String,
 ) -> anyhow::Result<(ClientHandle, fedimint_core::config::ClientConfig)> {
+  print!("Creating database...");
   let invite = InviteCode::from_str(&invite_code).context("Invalid invite code")?;
   let db = create_database(app_handle, &client_name).await?;
   println!("Database created at:");
