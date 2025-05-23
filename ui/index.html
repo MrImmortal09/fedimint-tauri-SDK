@@ -172,7 +172,7 @@
     </div>
 
     <script>
-        const { invoke } = window.__TAURI__.core;
+        const invoke = window.__TAURI__.core.invoke;
 
         document.querySelectorAll('.tab-button').forEach(button => {
             button.addEventListener('click', () => {
